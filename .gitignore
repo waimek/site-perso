@@ -1,4 +1,7 @@
-/bootstrap
+/styles/bootstrap
 /jquery
-/fonts
+/styles/fonts
 /documents
+/.idea
+.gitignore
+.env

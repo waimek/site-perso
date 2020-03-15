@@ -6,10 +6,10 @@
     <meta name="keywords" content="d&eacute;veloppeur, dev, developpeur, IT, informatique"/>
     <meta author="Edouard PEYROT"/>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="../styles/css/bootstrap/bootstrap.min.css"/>
     <link href="https://fonts.googleapis.com/css?family=Noto+Serif:400i&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="fonts/css/all.min.css">
-    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="../styles/fonts/css/all.min.css">
+    <link rel="stylesheet" href="../styles/css/main.css">
 
     <title>Edouard PEYROT</title>
 </head>
@@ -233,6 +233,20 @@
                 <input type="submit" id="btnSubmit" value="Envoyer" class="btn btn-secondary"/>
             </fieldset>
         </form>
+        <?php
+    if (isset($_POST['message'])) {
+        $position_arobase = strpos($_POST['email'], '@');
+        if ($position_arobase === false)
+            echo '<p>Votre email doit comporter un arobase.</p>';
+        else {
+        $retour = mail('jules@free.fr', 'Envoi depuis la page Contact', $_POST['message'], 'From: ' . $_POST['email']);
+        if($retour)
+        echo '<p>Votre message a été envoyé.</p>';
+        else
+        echo '<p>Erreur.</p>';
+        }
+        }
+        ?>
     </section>
 </main>
 <!--<aside>
@@ -247,7 +261,7 @@
     <ul class="list-group list-group-horizontal  bg-dark icons" id="coord">
         <li class="list-group-item  bg-dark border-0 text-white"><a href="tel:0677351366" class="bulleinfo"><i class="fas fa-phone-square"></i><span>06.77.35.13.66</span></a>
         </li>
-        <li class="list-group-item bg-dark border-0"><a class="text-white bulleinfo"  href="index.eng.html"><i
+        <li class="list-group-item bg-dark border-0"><a class="text-white bulleinfo"  href="../en/index.html"><i
                 class="fas fa-language"></i><span>Switch to english</span></a></li>
     </ul>
     <ul class="list-group list-group-horizontal  bg-dark icons">
@@ -263,7 +277,7 @@
         <p> &copy; Copyright 2020 - Edouard PEYROT</p>
     </div>
 </footer>
-<script src="jquery/jquery-3.4.1.min.js"></script>
+<script src="../jquery/jquery-3.4.1.min.js"></script>
 <script>
     $(document).ready(function () {
         $("#scroll-down").click(function () {
@@ -288,7 +302,7 @@
     });
 
 </script>
-<script src="bootstrap/js/bootstrap.min.js"></script>
+<script src="../styles/bootstrap/js/bootstrap.min.js"></script>
 </body>
 
 </html>
