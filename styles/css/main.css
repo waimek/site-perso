@@ -96,7 +96,9 @@ h1:first-child {
     display: flex;
     flex-direction: column;
 }
-
+.badge-warning{
+    color : white!important;
+}
 li {
     list-style-type: none;
 }
